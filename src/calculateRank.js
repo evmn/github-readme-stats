@@ -49,8 +49,7 @@ function calculateRank({
   const RANK_E = 23;
   const RANK_F = 27;
 
-  const TOTAL_VALUES =
-    RANK_S_VALUE + RANK_A2_VALUE + RANK_A3_VALUE + RANK_B_VALUE;
+  const TOTAL_VALUES = RANK_S +  RANK_A +  RANK_B +  RANK_C +  RANK_D +  RANK_E +  RANK_F 
 
   // prettier-ignore
   const score = (
