@@ -65,20 +65,35 @@ function calculateRank({
   const normalizedScore = normalcdf(score, TOTAL_VALUES, ALL_OFFSETS) * 100;
 
   let level = "";
-  const BASE_NUMBER = 100;
+  const BASE_NUMBER = 30;
+  const marks = stargazers * followers
 
-  if (followers * stargazers > BASE_NUMBER * 3 ** 10) {
+  if       (marks > BASE_NUMBER * 7 ** 7) {
+    level = "S+";
+  }else if (marks > BASE_NUMBER * 6 ** 7) {
     level = "S";
-  }else if (followers * stargazers > BASE_NUMBER * 3 ** 8) {
+  }else if (marks > BASE_NUMBER * 6 ** 6) {
+    level = "A+";
+  }else if (marks > BASE_NUMBER * 5 ** 6) {
     level = "A";
-  }else if (followers * stargazers > BASE_NUMBER * 3 ** 6) {
+  }else if (marks > BASE_NUMBER * 5 ** 5) {
+    level = "B+";
+  }else if (marks > BASE_NUMBER * 4 ** 5) {
     level = "B";
-  }else if (followers * stargazers > BASE_NUMBER * 3 ** 4) {
+  }else if (marks > BASE_NUMBER * 4 ** 4) {
+    level = "C+";
+  }else if (marks > BASE_NUMBER * 3 ** 4) {
     level = "C";
-  }else if (followers * stargazers > BASE_NUMBER * 3 ** 2) {
+  }else if (marks > BASE_NUMBER * 3 ** 3) {
+    level = "D+";
+  }else if (marks > BASE_NUMBER * 2 ** 3) {
     level = "D";
-  }else if (followers * stargazers > BASE_NUMBER * 3 ** 0) {
+  }else if (marks > BASE_NUMBER * 2 ** 2) {
+    level = "E+";
+  }else if (marks > BASE_NUMBER * 1 ** 2) {
     level = "E";
+  }else if (marks > BASE_NUMBER * 0 ** 1) {
+    level = "F+";
   } else {
     level = "F";
   }
