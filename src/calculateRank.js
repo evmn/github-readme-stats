@@ -65,18 +65,25 @@ function calculateRank({
   const normalizedScore = normalcdf(score, TOTAL_VALUES, ALL_OFFSETS) * 100;
 
   let level = "";
+  const BASE_NUMBER = 10;
 
-  if (followers > 3000 && stargazers > 10000) {
+  if ((followers > BASE_NUMBER * 3 ** 5 && stargazers > BASE_NUMBER * 3 ** 5) ||
+        (followers > BASE_NUMBER * 3 ** 4 && stargazers > BASE_NUMBER * 3 ** 6 )) {
     level = "S";
-  } else if (followers > 700 && stargazers > 2000) {
+  } else if ((followers > BASE_NUMBER * 3 ** 4 && stargazers > BASE_NUMBER * 3 ** 4) ||
+        (followers > BASE_NUMBER *3 ** 3 && stargazers > BASE_NUMBER * 3 ** 5 )) {
     level = "A";
-  } else if (followers > 250 && stargazers > 750) {
+  } else if ((followers > BASE_NUMBER * 3 ** 3 && stargazers > BASE_NUMBER * 3 ** 3) ||
+        (followers > BASE_NUMBER * 3 ** 2 && stargazers > BASE_NUMBER * 3 ** 4 )) {
     level = "B";
-  } else if (followers > 80 && stargazers > 250) {
+  } else if ((followers > BASE_NUMBER * 3 ** 2 && stargazers > BASE_NUMBER * 3 ** 2) ||
+        (followers > BASE_NUMBER * 3 && stargazers > BASE_NUMBER * 3 ** 3 )) {
     level = "C";
-  } else if (followers > 25 && stargazers > 80) {
+  } else if ((followers > BASE_NUMBER * 3 && stargazers > BASE_NUMBER * 3) ||
+        (followers > BASE_NUMBER && stargazers > BASE_NUMBER * 3 ** 2 )) {
     level = "D";
-  } else if (followers > 10 && stargazers > 20) {
+  } else if ((followers > BASE_NUMBER && stargazers > BASE_NUMBER) ||
+        (followers > 0 && stargazers > BASE_NUMBER * 3)) {
     level = "E";
   } else {
     level = "F";
