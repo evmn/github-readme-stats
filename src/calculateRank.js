@@ -67,17 +67,17 @@ function calculateRank({
   let level = "";
   const BASE_NUMBER = 100;
 
-  if (followers * stargazers / BASE_NUMBER * 3 ** 10 > 1) {
+  if (followers * stargazers > BASE_NUMBER * 3 ** 10) {
     level = "S";
-  }else if (followers * stargazers / BASE_NUMBER * 3 ** 8 > 1) {
+  }else if (followers * stargazers > BASE_NUMBER * 3 ** 8) {
     level = "A";
-  }else if (followers * stargazers / BASE_NUMBER * 3 ** 6 > 1) {
+  }else if (followers * stargazers > BASE_NUMBER * 3 ** 6) {
     level = "B";
-  }else if (followers * stargazers / BASE_NUMBER * 3 ** 4 > 1) {
+  }else if (followers * stargazers > BASE_NUMBER * 3 ** 4) {
     level = "C";
-  }else if (followers * stargazers / BASE_NUMBER * 3 ** 2 > 1) {
+  }else if (followers * stargazers > BASE_NUMBER * 3 ** 2) {
     level = "D";
-  }else if (followers * stargazers / BASE_NUMBER * 3 ** 0 > 1) {
+  }else if (followers * stargazers > BASE_NUMBER * 3 ** 0) {
     level = "E";
   } else {
     level = "F";
