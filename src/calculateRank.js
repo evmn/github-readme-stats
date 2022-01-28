@@ -41,15 +41,15 @@ function calculateRank({
     FOLLOWERS_OFFSET +
     REPO_OFFSET;
 
-  const RANK_S = 2;
-  const RANK_A = 4;
-  const RANK_B = 8;
-  const RANK_C = 16;
-  const RANK_D = 20;
-  const RANK_E = 23;
-  const RANK_F = 27;
+  const RANK_S = 1;
+  const RANK_A = 5;
+  const RANK_B = 15;
+  const RANK_C = 30;
+  const RANK_D = 50;
+  const RANK_E = 70;
+  const RANK_F = 100;
 
-  const TOTAL_VALUES = RANK_S +  RANK_A +  RANK_B +  RANK_C +  RANK_D +  RANK_E +  RANK_F 
+  const TOTAL_VALUES = RANK_S +  RANK_A +  RANK_B +  RANK_C +  RANK_D +  RANK_E +  RANK_F;
 
   // prettier-ignore
   const score = (
@@ -66,17 +66,17 @@ function calculateRank({
 
   let level = "";
 
-  if (normalizedScore < RANK_S) {
+  if (followers > 3000 && stargazers > 10000) {
     level = "S";
-  } else if (normalizedScore < RANK_A) {
+  } else if (followers > 700 && stargazers > 2000) {
     level = "A";
-  } else if (normalizedScore < RANK_B) {
+  } else if (followers > 250 && stargazers > 750) {
     level = "B";
-  } else if (normalizedScore < RANK_C) {
+  } else if (followers > 80 && stargazers > 250) {
     level = "C";
-  } else if (normalizedScore < RANK_D) {
+  } else if (followers > 25 && stargazers > 80) {
     level = "D";
-  } else if (normalizedScore < RANK_E) {
+  } else if (followers > 10 && stargazers > 20) {
     level = "E";
   } else {
     level = "F";
