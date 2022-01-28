@@ -41,11 +41,13 @@ function calculateRank({
     FOLLOWERS_OFFSET +
     REPO_OFFSET;
 
-  const RANK_S_VALUE = 1;
-  const RANK_DOUBLE_A_VALUE = 25;
-  const RANK_A2_VALUE = 45;
-  const RANK_A3_VALUE = 60;
-  const RANK_B_VALUE = 100;
+  const RANK_S = 2;
+  const RANK_A = 4;
+  const RANK_B = 8;
+  const RANK_C = 16;
+  const RANK_D = 20;
+  const RANK_E = 23;
+  const RANK_F = 27;
 
   const TOTAL_VALUES =
     RANK_S_VALUE + RANK_A2_VALUE + RANK_A3_VALUE + RANK_B_VALUE;
@@ -65,26 +67,20 @@ function calculateRank({
 
   let level = "";
 
-  if (normalizedScore < RANK_S_VALUE) {
-    level = "S+";
-  }
-  if (
-    normalizedScore >= RANK_S_VALUE &&
-    normalizedScore < RANK_DOUBLE_A_VALUE
-  ) {
+  if (normalizedScore < RANK_S) {
     level = "S";
-  }
-  if (
-    normalizedScore >= RANK_DOUBLE_A_VALUE &&
-    normalizedScore < RANK_A2_VALUE
-  ) {
-    level = "A++";
-  }
-  if (normalizedScore >= RANK_A2_VALUE && normalizedScore < RANK_A3_VALUE) {
-    level = "A+";
-  }
-  if (normalizedScore >= RANK_A3_VALUE && normalizedScore < RANK_B_VALUE) {
-    level = "B+";
+  } else if (normalizedScore < RANK_A) {
+    level = "A";
+  } else if (normalizedScore < RANK_B) {
+    level = "B";
+  } else if (normalizedScore < RANK_C) {
+    level = "C";
+  } else if (normalizedScore < RANK_D) {
+    level = "D";
+  } else if (normalizedScore < RANK_E) {
+    level = "E";
+  } else {
+    level = "F";
   }
 
   return { level, score: normalizedScore };
